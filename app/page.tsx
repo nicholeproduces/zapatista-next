@@ -1,9 +1,10 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-// Paths to images in public/photos/landscape (exact filenames so they work on Vercel/Linux)
+// Image paths: files live in public/photos/. Path in code = "/photos/" + exact filename (use %20 for spaces).
+// To list correct paths in terminal: Get-ChildItem public\photos -Recurse -Name
+const HERO = "/photos/hero-jardin.JPEG";
 const LANDSCAPE = {
-  cactus: "/photos/landscape/cactus.JPEG",
   landscape8: "/photos/landscape/landscape%20(8).JPEG",
   landscape9: "/photos/landscape/landscape%20(9).JPEG",
   landscape10: "/photos/landscape/landscape%20(10).JPEG",
@@ -49,9 +50,7 @@ function Nav() {
     { href: "#story", label: "Story" },
     { href: "#city", label: "Light & Shadow" },
     { href: "#production", label: "Production" },
-    { href: "#gallery", label: "Gallery" },
     { href: "/resources", label: "Resources" },
-    { href: "/gallery", label: "Image Reference" },
     { href: "#contact", label: "Contact" },
   ];
 
@@ -159,7 +158,7 @@ export default function Page() {
             <div className="lg:col-span-5">
               <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50">
                 <div className="aspect-[16/10] w-full">
-                  <img src={LANDSCAPE.cactus} alt="San Miguel de Allende" className="h-full w-full object-cover" />
+                  <img src={HERO} alt="San Miguel de Allende" className="h-full w-full object-cover" />
                 </div>
                 <div className="p-5">
                   <div className="text-sm font-semibold">Tone</div>
@@ -260,13 +259,6 @@ export default function Page() {
                       href="mailto:savagepropsllc@gmail.com?subject=Zapatista%20—%20Request%20Materials"
                     >
                       Request Materials
-                    </a>
-
-                    <a
-                      className="inline-flex w-full items-center justify-center rounded-xl border border-white/20 bg-black/20 px-4 py-3 text-sm font-semibold text-white no-underline hover:bg-black/30"
-                      href="/gallery"
-                    >
-                      Image Reference Gallery
                     </a>
 
                     <a
@@ -433,41 +425,6 @@ export default function Page() {
                 <div className="mt-4 text-xs text-neutral-500">Photo Credits: Nichole Wleklinski</div>
               </div>
             </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* GALLERY */}
-      <section id="gallery" className="border-b border-neutral-200">
-        <Container>
-          <div className="py-14 sm:py-16">
-            <SectionTitle
-              eyebrow="Gallery"
-              title="Curated selects"
-              subtitle="Quick scan selections. Swap image filenames later—structure stays stable."
-            />
-
-            <div className="grid gap-4 sm:grid-cols-3">
-              {["Streets", "Landscape", "Food"].map((label) => (
-                <div key={label} className="overflow-hidden rounded-2xl border border-neutral-200">
-                  <div className="aspect-[4/3] w-full bg-neutral-50">
-                    <img src={LANDSCAPE.cactus} alt={label} className="h-full w-full object-cover" />
-                  </div>
-                  <div className="p-4">
-                    <div className="text-sm font-semibold">{label}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <a
-              href="/gallery"
-              className="mt-6 inline-block text-sm font-semibold text-neutral-900 underline decoration-neutral-300 hover:decoration-neutral-900"
-            >
-              View full image reference gallery
-            </a>
-
-            <div className="mt-6 text-xs text-neutral-500">Photo Credits: Nichole Wleklinski</div>
           </div>
         </Container>
       </section>
