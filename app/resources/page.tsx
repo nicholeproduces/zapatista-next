@@ -75,6 +75,14 @@ export default function ResourcesPage() {
             <p className="mt-3 max-w-3xl text-neutral-700">
               Supporting proof, location context, and industry references — clean, scannable, easy to verify.
             </p>
+            <div className="mt-4">
+              <Link
+                href="/"
+                className="inline-flex items-center gap-1.5 rounded-full border border-neutral-300 px-3 py-1.5 text-sm font-medium text-neutral-900 no-underline hover:bg-neutral-50"
+              >
+                ← Go home
+              </Link>
+            </div>
           </div>
 
           {/* Grid */}
@@ -178,9 +186,9 @@ export default function ResourcesPage() {
               For deck access, script requests, locations, and production conversations:
               <a
                 className="ml-2 underline decoration-neutral-300 hover:decoration-neutral-900"
-                href="mailto:savagepropsllc@gmail.com?subject=Zapatista%20—%20Request%20Materials"
+                href="mailto:frankgaydos.sma@gmail.com?subject=Zapatista%20—%20Request%20Materials"
               >
-                savagepropsllc@gmail.com
+                frankgaydos.sma@gmail.com
               </a>
             </p>
           </div>

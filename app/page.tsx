@@ -88,7 +88,7 @@ function Nav() {
           </nav>
 
           <a
-            href="mailto:savagepropsllc@gmail.com?subject=Zapatista%20—%20Request%20Materials"
+            href="mailto:frankgaydos.sma@gmail.com?subject=Zapatista%20—%20Request%20Materials"
             className="inline-flex items-center rounded-full border border-neutral-300 px-3 py-1.5 text-sm font-medium text-neutral-900 no-underline hover:bg-neutral-50"
           >
             Email
@@ -109,7 +109,7 @@ function ButtonRow() {
         View Pitch Deck
       </a>
       <a
-        href="mailto:savagepropsllc@gmail.com?subject=Zapatista%20—%20Request%20Materials"
+        href="mailto:frankgaydos.sma@gmail.com?subject=Zapatista%20—%20Request%20Materials"
         className="inline-flex items-center justify-center rounded-xl border border-neutral-300 px-5 py-3 text-sm font-semibold text-neutral-900 no-underline hover:bg-neutral-50"
       >
         Request Materials
@@ -211,7 +211,7 @@ export default function Page() {
                       <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:justify-center">
                         <a
                           className="inline-flex items-center justify-center rounded-xl bg-white px-4 py-2 text-sm font-semibold text-black no-underline hover:bg-white/90"
-                          href="mailto:savagepropsllc@gmail.com?subject=Zapatista%20—%20Pitch%20Deck%20Request"
+                          href="mailto:frankgaydos.sma@gmail.com?subject=Zapatista%20—%20Pitch%20Deck%20Request"
                         >
                           Request Pitch Deck
                         </a>
@@ -256,7 +256,7 @@ export default function Page() {
 
                     <a
                       className="inline-flex w-full items-center justify-center rounded-xl bg-white px-4 py-3 text-sm font-semibold text-black no-underline hover:bg-white/90"
-                      href="mailto:savagepropsllc@gmail.com?subject=Zapatista%20—%20Request%20Materials"
+                      href="mailto:frankgaydos.sma@gmail.com?subject=Zapatista%20—%20Request%20Materials"
                     >
                       Request Materials
                     </a>
@@ -442,9 +442,9 @@ export default function Page() {
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <a
                 className="inline-flex items-center justify-center rounded-xl bg-neutral-900 px-5 py-3 text-sm font-semibold text-white no-underline hover:bg-neutral-800"
-                href="mailto:savagepropsllc@gmail.com?subject=Zapatista%20—%20Request%20Materials"
+                href="mailto:frankgaydos.sma@gmail.com?subject=Zapatista%20—%20Request%20Materials"
               >
-                savagepropsllc@gmail.com
+                frankgaydos.sma@gmail.com
               </a>
 
               <Link
@@ -467,7 +467,7 @@ export default function Page() {
                 Pitch Deck created by Frank Gaydos • Site produced by Savage Props LLC • Photo credits: Nichole
                 Wleklinski
               </div>
-              <div>Contact: savagepropsllc@gmail.com</div>
+              <div>Contact: frankgaydos.sma@gmail.com</div>
             </div>
           </div>
         </Container>
