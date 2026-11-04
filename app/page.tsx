@@ -7,7 +7,11 @@ import {
   IMDB_URL,
   LINKEDIN_URL,
   MURALS,
+  NICHOLE_EMAILS,
+  PROJECT_CONTACT_NAME,
   PROJECT_EMAIL,
+  PROJECT_PHONE,
+  PROJECT_PHONE_TEL,
 } from "./lookbook";
 
 const MAILTO = `mailto:${PROJECT_EMAIL}?subject=Zapatista%20%E2%80%94%20Request%20Materials`;
@@ -15,10 +19,9 @@ const MAILTO = `mailto:${PROJECT_EMAIL}?subject=Zapatista%20%E2%80%94%20Request%
 const STILLS: Array<{ href: string; src: string; label: string }> = [
   { href: "/gallery/streets", src: "/photos/streets/streets%20(1).JPEG", label: "Streets" },
   { href: "/gallery/landscape", src: "/photos/landscape/landscape%20(9).JPEG", label: "Landscape" },
-  { href: "/gallery/nights", src: "/photos/nights/nights%20(2).JPEG", label: "Nights" },
+  { href: "/gallery/nights", src: "/photos/nights/nights%20(3).JPEG", label: "Nights" },
   { href: "/gallery/food", src: "/photos/food/food%20(1).JPEG", label: "Food" },
   { href: "/gallery/signs", src: "/photos/signs/signs%20(1).JPEG", label: "Signs" },
-  { href: "/gallery/interiors", src: "/photos/interiors/interior%20(1).JPEG", label: "Interiors" },
 ];
 
 const CREDITS = [
@@ -230,7 +233,7 @@ export default function Page() {
               ))}
             </div>
             <p className="mt-3 text-sm text-[#3f3a34]">
-              Recent murals on the arroyo walkway. Photographs: Nichole Wleklinski.
+              Recent murals on the arroyo walkway. Photographs: Frank Gaydos.
             </p>
           </div>
         </Container>
@@ -245,7 +248,7 @@ export default function Page() {
                 <h2 className="mt-3 text-2xl font-semibold tracking-tight">Streets, landscape, food, night</h2>
                 <p className="mt-3 max-w-2xl text-sm text-[#3f3a34]">
                   The earlier location photographs are in the gallery, sorted the way they were collected: streets,
-                  landscape, nights, food, signs, interiors, and tiendas.
+                  landscape, nights, food, signs, and tiendas. Interiors are coming soon.
                 </p>
               </div>
               <Link
@@ -269,6 +272,14 @@ export default function Page() {
                   <div className="mt-2 text-sm font-medium text-[#1c1916]">{still.label}</div>
                 </Link>
               ))}
+              <button type="button" disabled className="cursor-not-allowed text-left">
+                <div className="flex aspect-[4/3] items-center justify-center rounded-2xl border border-[#1c1916]/10 bg-[#e4dfd6]">
+                  <span className="rounded-full bg-[#1c1916]/10 px-4 py-2 text-sm font-semibold text-[#1c1916]/45">
+                    Coming soon
+                  </span>
+                </div>
+                <div className="mt-2 text-sm font-medium text-[#1c1916]/45">Interiors</div>
+              </button>
             </div>
           </div>
         </Container>
@@ -282,12 +293,19 @@ export default function Page() {
             <p className="mt-3 max-w-2xl text-[#f4efe6]/75">
               Script, business plan, and production conversations. The pitch deck is on its own page.
             </p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <p className="mt-5 text-sm font-semibold text-[#f4efe6]">{PROJECT_CONTACT_NAME}</p>
+            <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <a
                 href={MAILTO}
                 className="inline-flex items-center justify-center rounded-xl bg-[#f4efe6] px-5 py-3 text-sm font-semibold text-[#0c0b0a] no-underline hover:bg-white"
               >
                 {PROJECT_EMAIL}
+              </a>
+              <a
+                href={`tel:${PROJECT_PHONE_TEL}`}
+                className="inline-flex items-center justify-center rounded-xl border border-white/20 px-5 py-3 text-sm font-semibold text-[#f4efe6] no-underline hover:bg-white/10"
+              >
+                {PROJECT_PHONE}
               </a>
               <Link
                 href="/deck"
@@ -319,8 +337,11 @@ export default function Page() {
       <footer className="border-t border-white/10">
         <Container>
           <div className="flex flex-col gap-2 py-8 text-xs text-[#f4efe6]/45 sm:flex-row sm:items-center sm:justify-between">
-            <div>Look book for the feature. Site produced by Savage Props LLC.</div>
-            <div>Location photographs: Nichole Wleklinski</div>
+            <div>
+              Look book for the feature. Site produced by Savage Props LLC · Nichole Wleklinski ·{" "}
+              {NICHOLE_EMAILS.join(" · ")}
+            </div>
+            <div>Mural photographs: Frank Gaydos · Location stills: Nichole Wleklinski</div>
           </div>
         </Container>
       </footer>

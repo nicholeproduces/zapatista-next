@@ -1,6 +1,16 @@
 import Link from "next/link";
 import { SiteHeader } from "../components/site-header";
-import { ARTICLE_URL, CACHINCHES_URL, IMDB_URL, LINKEDIN_URL } from "../lookbook";
+import {
+  ARTICLE_URL,
+  CACHINCHES_URL,
+  IMDB_URL,
+  LINKEDIN_URL,
+  NICHOLE_EMAILS,
+  PROJECT_CONTACT_NAME,
+  PROJECT_EMAIL,
+  PROJECT_PHONE,
+  PROJECT_PHONE_TEL,
+} from "../lookbook";
 
 function Container({ children }: { children: React.ReactNode }) {
   return <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">{children}</div>;
@@ -195,19 +205,33 @@ export default function ResourcesPage() {
           <div className="mt-10 rounded-2xl border border-neutral-200 bg-neutral-50 p-6">
             <div className="text-sm font-semibold">Contact</div>
             <p className="mt-2 text-sm text-neutral-700">
-              For deck access, script requests, locations, and production conversations:
+              For deck access, script requests, and the film: {PROJECT_CONTACT_NAME},{" "}
               <a
-                className="ml-2 underline decoration-neutral-300 hover:decoration-neutral-900"
-                href="mailto:frankgaydos.sma@gmail.com?subject=Zapatista%20—%20Request%20Materials"
+                className="underline decoration-neutral-300 hover:decoration-neutral-900"
+                href={`mailto:${PROJECT_EMAIL}?subject=Zapatista%20—%20Request%20Materials`}
               >
-                frankgaydos.sma@gmail.com
+                {PROJECT_EMAIL}
               </a>
+              ,{" "}
+              <a className="underline decoration-neutral-300 hover:decoration-neutral-900" href={`tel:${PROJECT_PHONE_TEL}`}>
+                {PROJECT_PHONE}
+              </a>
+              . Site produced by Nichole Wleklinski, Savage Props LLC:{" "}
+              {NICHOLE_EMAILS.map((email, index) => (
+                <span key={email}>
+                  {index > 0 ? " · " : null}
+                  <a className="underline decoration-neutral-300 hover:decoration-neutral-900" href={`mailto:${email}`}>
+                    {email}
+                  </a>
+                </span>
+              ))}
             </p>
           </div>
 
           {/* Footer credit line */}
           <div className="mt-10 text-xs text-neutral-500">
-            Pitch Deck created by Frank Gaydos • Site produced by Savage Props LLC • Photo credits: Nichole Wleklinski
+            Pitch deck by Frank Gaydos · Mural photographs: Frank Gaydos · Site produced by Savage Props LLC,
+            Nichole Wleklinski · Location stills: Nichole Wleklinski
           </div>
         </div>
       </Container>

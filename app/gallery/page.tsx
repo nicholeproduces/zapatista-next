@@ -9,7 +9,7 @@ function getCategoriesWithCounts() {
   if (!fs.existsSync(PHOTOS_DIR)) return [];
   const categories = fs
     .readdirSync(PHOTOS_DIR, { withFileTypes: true })
-    .filter((d) => d.isDirectory())
+    .filter((d) => d.isDirectory() && d.name !== "interiors")
     .map((d) => d.name);
 
   return categories
@@ -32,8 +32,8 @@ export default function GalleryIndex() {
           <div className="text-[11px] font-semibold tracking-[0.22em] text-[#8a5a32]">GALLERY</div>
           <h1 className="mt-3 text-3xl font-semibold tracking-tight">Location stills</h1>
           <p className="mt-3 max-w-3xl text-[#3f3a34]">
-            Streets, landscape, nights, food, signs, interiors, and tiendas. These are the reference photographs
-            collected for San Miguel, separate from the look book.
+            Streets, landscape, nights, food, signs, and tiendas. These are the reference photographs collected
+            for San Miguel, separate from the look book. Interiors are coming soon.
           </p>
           <div className="mt-4">
             <Link href="/#san-miguel" className="text-sm font-medium text-[#1c1916]">
@@ -53,6 +53,14 @@ export default function GalleryIndex() {
               <div className="mt-2 text-sm text-[#3f3a34]">{count} images</div>
             </Link>
           ))}
+          <button
+            type="button"
+            disabled
+            className="cursor-not-allowed rounded-2xl border border-[#1c1916]/10 bg-[#e4dfd6] p-6 text-left"
+          >
+            <div className="text-sm font-semibold text-[#1c1916]/45">Interiors</div>
+            <div className="mt-2 text-sm text-[#1c1916]/45">Coming soon</div>
+          </button>
         </div>
 
         <div className="mt-10 text-xs text-[#3f3a34]">Photo credits: Nichole Wleklinski</div>

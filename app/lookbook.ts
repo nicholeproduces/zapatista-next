@@ -43,7 +43,15 @@ export const LINKEDIN_URL = "https://www.linkedin.com/in/frank-gaydos-ba89b18/";
 
 export const DECK_FILE = "/deck/zapatista-pitch-deck.pdf";
 
+export const PROJECT_CONTACT_NAME = "Frank Gaydos";
+
 export const PROJECT_EMAIL = "frankgaydos.sma@gmail.com";
+
+export const PROJECT_PHONE = "52 415 113 9723";
+
+export const PROJECT_PHONE_TEL = "+524151139723";
+
+export const NICHOLE_EMAILS = ["nicholeproduces@gmail.com", "savagepropsllc@gmail.com"] as const;
 
 export const MURALS: Array<{ src: string; alt: string }> = [
   {
