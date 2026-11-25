@@ -49,6 +49,10 @@ export const PRODUCER_IMDB_URL = "https://www.imdb.com/name/nm3278262/";
 
 export const PRODUCER_RONIN_URL = "https://vimeo.com/738493290";
 
+export const PRODUCER_YOUTUBE_URL = "https://www.youtube.com/@RobertoGonzalez-wm7mh";
+
+export const HOTEL_MANANA_REEL_ID = "eNOOVLSXQmM";
+
 // TODO: set before the link renders.
 export const PRODUCER_LINKEDIN_URL = "";
 
@@ -69,7 +73,11 @@ export const PROJECT_PHONE = "52 415 113 9723";
 
 export const PROJECT_PHONE_TEL = "+524151139723";
 
-export const NICHOLE_EMAILS = ["nicholeproduces@gmail.com", "savagepropsllc@gmail.com"] as const;
+export const NICHOLE_EMAILS = ["savagepropsllc@gmail.com"] as const;
+
+export const BOOK_TITLE = "Zapatista: A Politically Charged Revolutionary Thriller";
+export const BOOK_PUBLISHER = "Tall Pines Publishing";
+export const BOOK_URL = "https://www.amazon.com/dp/B0DRW3TBMW";
 
 export const MURALS: Array<{ src: string; alt: string }> = [
   {

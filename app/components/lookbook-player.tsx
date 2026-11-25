@@ -84,6 +84,7 @@ export function LookbookPlayer() {
           <button
             type="button"
             onClick={() => go(index - 1)}
+            aria-label="Previous plate"
             className="rounded-full border border-white/15 px-3 py-1.5 text-sm text-white"
           >
             Prev
@@ -91,6 +92,7 @@ export function LookbookPlayer() {
           <button
             type="button"
             onClick={() => go(index + 1)}
+            aria-label="Next plate"
             className="rounded-full border border-white/15 px-3 py-1.5 text-sm text-white"
           >
             Next

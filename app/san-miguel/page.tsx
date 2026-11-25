@@ -46,9 +46,10 @@ const PLACES = [
 const STILLS = [
   { href: "/gallery/streets", src: "/photos/streets/streets%20(1).JPEG", label: "Streets" },
   { href: "/gallery/landscape", src: "/photos/landscape/landscape%20(9).JPEG", label: "Landscape" },
-  { href: "/gallery/nights", src: "/photos/nights/nights%20(3).JPEG", label: "Nights" },
+  { href: "/gallery/nights", src: "/photos/nights/nights%20(7).JPEG", label: "Nights" },
   { href: "/gallery/food", src: "/photos/food/food%20(1).JPEG", label: "Food" },
   { href: "/gallery/signs", src: "/photos/signs/signs%20(1).JPEG", label: "Signs" },
+  { href: "/gallery/tiendas", src: "/photos/tiendas/tienda%20(1).JPEG", label: "Tiendas" },
 ];
 
 function Container({ children }: { children: React.ReactNode }) {
@@ -162,7 +163,7 @@ export default function SanMiguelPage() {
               <div>
                 <h2 className="text-2xl font-semibold tracking-tight">Location stills</h2>
                 <p className="mt-3 max-w-2xl text-sm text-[#3f3a34]">
-                  Streets, landscape, nights, food, and signs, photographed in San Miguel de Allende.
+                  Streets, landscape, nights, food, signs, and tiendas, photographed in San Miguel de Allende.
                 </p>
               </div>
               <Link

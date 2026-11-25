@@ -5,6 +5,8 @@ import { LookbookPlayer } from "./components/lookbook-player";
 import { SiteHeader } from "./components/site-header";
 import {
   ARTICLE_URL,
+  BOOK_PUBLISHER,
+  BOOK_URL,
   CACHINCHES_URL,
   IMDB_URL,
   LINKEDIN_URL,
@@ -19,6 +21,8 @@ import {
   PRODUCER_LINKEDIN_URL,
   PRODUCER_PHOTO,
   PRODUCER_RONIN_URL,
+  PRODUCER_YOUTUBE_URL,
+  HOTEL_MANANA_REEL_ID,
 } from "./lookbook";
 
 const PRODUCER_PHOTO_READY = fs.existsSync(path.join(process.cwd(), "public", PRODUCER_PHOTO));
@@ -26,6 +30,7 @@ const PRODUCER_PHOTO_READY = fs.existsSync(path.join(process.cwd(), "public", PR
 const PRODUCER_LINKS = [
   { href: PRODUCER_IMDB_URL, label: "IMDb" },
   { href: PRODUCER_RONIN_URL, label: "Ronin Studios on Vimeo" },
+  { href: PRODUCER_YOUTUBE_URL, label: "YouTube" },
   { href: PRODUCER_LINKEDIN_URL, label: "LinkedIn" },
 ].filter((link) => link.href);
 
@@ -34,15 +39,16 @@ const MAILTO = `mailto:${PROJECT_EMAIL}?subject=Zapatista%20%E2%80%94%20Request%
 const STILLS: Array<{ href: string; src: string; label: string }> = [
   { href: "/gallery/streets", src: "/photos/streets/streets%20(1).JPEG", label: "Streets" },
   { href: "/gallery/landscape", src: "/photos/landscape/landscape%20(9).JPEG", label: "Landscape" },
-  { href: "/gallery/nights", src: "/photos/nights/nights%20(3).JPEG", label: "Nights" },
+  { href: "/gallery/nights", src: "/photos/nights/nights%20(7).JPEG", label: "Nights" },
   { href: "/gallery/food", src: "/photos/food/food%20(1).JPEG", label: "Food" },
   { href: "/gallery/signs", src: "/photos/signs/signs%20(1).JPEG", label: "Signs" },
+  { href: "/gallery/tiendas", src: "/photos/tiendas/tienda%20(1).JPEG", label: "Tiendas" },
 ];
 
 const CREDITS = [
   "Zapatista — feature adaptation of the novel by P.W. Ross, in development",
   "Into the Beautiful North",
-  "In the Shadow of the Angel — Oaxaca Film Festival award",
+  "In the Shadow of the Angel — Special Mention, Oaxaca FilmFest Global Script Challenge",
   "Hotel Mañana — TV pilot with Mark Saunders; Stage 32 top ten (5th place)",
   "Worst Friends Forever",
   "Road to México",
@@ -79,8 +85,17 @@ export default function Page() {
                 the city it is written to be shot in.
               </p>
               <p className="mt-3 text-sm text-[#f4efe6]/60">
-                Adapted by <span className="text-[#f4efe6]">Frank Gaydos</span> from the novel by{" "}
-                <span className="text-[#f4efe6]">P.W. Ross</span>.
+                Adapted by <span className="text-[#f4efe6]">Frank Gaydos</span> from the novel{" "}
+                <span className="text-[#f4efe6]">Zapatista</span> by <span className="text-[#f4efe6]">P.W. Ross</span>{" "}
+                ({BOOK_PUBLISHER}, 2025).{" "}
+                <a
+                  href={BOOK_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="whitespace-nowrap text-[#c4a27a] underline decoration-[#c4a27a]/40 hover:decoration-[#c4a27a]"
+                >
+                  Get the novel on Amazon
+                </a>
               </p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 <Link
@@ -105,7 +120,7 @@ export default function Page() {
 
       <section id="writer" className="border-b border-white/10">
         <Container>
-          <div className="grid gap-10 py-14 sm:py-16 lg:grid-cols-12 lg:items-start">
+          <div className="grid gap-10 py-14 sm:py-16 lg:grid-cols-12 lg:grid-rows-[auto_1fr] lg:items-start">
             <div className="lg:col-span-4">
               <div className="overflow-hidden rounded-2xl border border-white/10">
                 <img
@@ -117,13 +132,41 @@ export default function Page() {
               <p className="mt-3 text-xs text-[#f4efe6]/45">Photograph from the Atención San Miguel profile.</p>
             </div>
 
-            <div className="lg:col-span-8">
+            <div className="order-last lg:col-span-4">
+              <div className="overflow-hidden rounded-xl border border-white/10 bg-black">
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${HOTEL_MANANA_REEL_ID}`}
+                  title="Hotel Mañana sizzle reel"
+                  loading="lazy"
+                  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                  allowFullScreen
+                  className="aspect-video w-full"
+                />
+              </div>
+              <p className="mt-2 text-xs text-[#f4efe6]/45">
+                Hotel Mañana sizzle reel. TV pilot by Frank Gaydos and Mark Saunders.
+              </p>
+
+              <a href="/writer/oaxaca-award.jpg" className="mt-6 block max-w-[240px] no-underline">
+                <img
+                  src="/writer/oaxaca-award.jpg"
+                  alt="Oaxaca FilmFest Global Script Challenge: Special Mention for outstanding achievement in screenwriting, Frank Gaydos, In the Shadow of the Angel"
+                  className="w-full rounded-xl border border-white/10"
+                />
+                <span className="mt-2 block text-xs text-[#f4efe6]/45">
+                  Oaxaca FilmFest Global Script Challenge, Special Mention.
+                </span>
+              </a>
+            </div>
+
+            <div className="lg:col-span-8 lg:row-span-2">
               <div className="text-[11px] font-semibold tracking-[0.22em] text-[#c4a27a]">THE WRITER</div>
               <h2 className="mt-3 text-3xl font-semibold tracking-tight">Frank Gaydos</h2>
               <p className="mt-4 max-w-2xl text-[#f4efe6]/80">
                 Frank Gaydos wrote the screenplay. He has lived in San Miguel de Allende since 2010 and has been
                 writing for the screen since 2014, after a career in organizational development. His adaptation of
-                In the Shadow of the Angel won an award at the Oaxaca Film Festival. Hotel Mañana, his TV pilot written
+                In the Shadow of the Angel received a Special Mention for outstanding achievement in screenwriting
+                from the Oaxaca FilmFest Global Script Challenge. Hotel Mañana, his TV pilot written
                 with Mark Saunders, finished in the top ten of Stage 32’s annual comedy contest, taking fifth place for
                 TV pilots and spec scripts. Scott Simmons’s profile in Atención
                 follows that reinvention, the scripts on his desk, and why this film belongs here.
@@ -331,7 +374,7 @@ export default function Page() {
                 <h2 className="mt-3 text-2xl font-semibold tracking-tight">Streets, landscape, food, night</h2>
                 <p className="mt-3 max-w-2xl text-sm text-[#3f3a34]">
                   The earlier location photographs are in the gallery, sorted the way they were collected: streets,
-                  landscape, nights, food, signs, and tiendas. Interiors are coming soon.
+                  landscape, nights, food, signs, and tiendas.
                 </p>
               </div>
               <Link
@@ -355,14 +398,6 @@ export default function Page() {
                   <div className="mt-2 text-sm font-medium text-[#1c1916]">{still.label}</div>
                 </Link>
               ))}
-              <button type="button" disabled className="cursor-not-allowed text-left">
-                <div className="flex aspect-[4/3] items-center justify-center rounded-2xl border border-[#1c1916]/10 bg-[#e4dfd6]">
-                  <span className="rounded-full bg-[#1c1916]/10 px-4 py-2 text-sm font-semibold text-[#1c1916]/45">
-                    Coming soon
-                  </span>
-                </div>
-                <div className="mt-2 text-sm font-medium text-[#1c1916]/45">Interiors</div>
-              </button>
             </div>
           </div>
         </Container>

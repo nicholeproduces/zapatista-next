@@ -2,6 +2,9 @@ import Link from "next/link";
 import { SiteHeader } from "../components/site-header";
 import {
   ARTICLE_URL,
+  BOOK_PUBLISHER,
+  BOOK_TITLE,
+  BOOK_URL,
   CACHINCHES_URL,
   IMDB_URL,
   LINKEDIN_URL,
@@ -76,6 +79,15 @@ export default function ResourcesPage() {
 
           {/* Grid */}
           <div className="grid gap-4 lg:grid-cols-2">
+            <Card title="The novel — Zapatista by P.W. Ross">
+              <div className="space-y-2">
+                <OutLink href={BOOK_URL}>{BOOK_TITLE}</OutLink>
+                <div className="text-xs text-neutral-500">
+                  {BOOK_PUBLISHER}, 2025. Book 2 of the Jack Alexander Thrillers. The source novel for the film.
+                </div>
+              </div>
+            </Card>
+
             <Card title="Frank Gaydos — Atención profile">
               <div className="space-y-2">
                 <OutLink href={ARTICLE_URL}>
@@ -203,10 +215,6 @@ export default function ResourcesPage() {
                   <div className="text-sm text-neutral-700">
                     Tight alleys, stone, color, and shadow — natural production value with minimal modern interference.
                   </div>
-                </div>
-
-                <div className="text-xs text-neutral-500">
-                  (If you want, we can add a “what’s been shot here” list later once you drop a source link you trust.)
                 </div>
               </div>
             </Card>
