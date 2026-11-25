@@ -26,6 +26,13 @@ export default function DeckPage() {
               Open PDF
             </a>
             <a
+              href={DECK_FILE}
+              download="Zapatista-Pitch-Deck.pdf"
+              className="inline-flex items-center rounded-full border border-white/20 px-4 py-2 text-sm font-medium text-[#f4efe6] no-underline hover:bg-white/10"
+            >
+              Download (8 MB)
+            </a>
+            <a
               href={`mailto:${PROJECT_EMAIL}?subject=Zapatista%20%E2%80%94%20Pitch%20Deck`}
               className="inline-flex items-center rounded-full border border-white/20 px-4 py-2 text-sm font-medium text-[#f4efe6] no-underline hover:bg-white/10"
             >

@@ -1,3 +1,5 @@
+import fs from "fs";
+import path from "path";
 import Link from "next/link";
 import { LookbookPlayer } from "./components/lookbook-player";
 import { SiteHeader } from "./components/site-header";
@@ -12,7 +14,20 @@ import {
   PROJECT_EMAIL,
   PROJECT_PHONE,
   PROJECT_PHONE_TEL,
+  PRODUCER_CREDITS,
+  PRODUCER_IMDB_URL,
+  PRODUCER_LINKEDIN_URL,
+  PRODUCER_PHOTO,
+  PRODUCER_RONIN_URL,
 } from "./lookbook";
+
+const PRODUCER_PHOTO_READY = fs.existsSync(path.join(process.cwd(), "public", PRODUCER_PHOTO));
+
+const PRODUCER_LINKS = [
+  { href: PRODUCER_IMDB_URL, label: "IMDb" },
+  { href: PRODUCER_RONIN_URL, label: "Ronin Studios on Vimeo" },
+  { href: PRODUCER_LINKEDIN_URL, label: "LinkedIn" },
+].filter((link) => link.href);
 
 const MAILTO = `mailto:${PROJECT_EMAIL}?subject=Zapatista%20%E2%80%94%20Request%20Materials`;
 
@@ -27,8 +42,8 @@ const STILLS: Array<{ href: string; src: string; label: string }> = [
 const CREDITS = [
   "Zapatista — feature adaptation of the novel by P.W. Ross, in development",
   "Into the Beautiful North",
-  "In the Shadow of the Angel",
-  "Hotel Mañana",
+  "In the Shadow of the Angel — Oaxaca Film Festival award",
+  "Hotel Mañana — TV pilot with Mark Saunders; Stage 32 top ten (5th place)",
   "Worst Friends Forever",
   "Road to México",
   "Black Dispatches — limited series",
@@ -107,9 +122,11 @@ export default function Page() {
               <h2 className="mt-3 text-3xl font-semibold tracking-tight">Frank Gaydos</h2>
               <p className="mt-4 max-w-2xl text-[#f4efe6]/80">
                 Frank Gaydos wrote the screenplay. He has lived in San Miguel de Allende since 2010 and has been
-                writing for the screen since 2014, after a career in organizational development. Scott Simmons’s
-                profile in Atención follows that reinvention, the scripts on his desk, and why this film belongs
-                here.
+                writing for the screen since 2014, after a career in organizational development. His adaptation of
+                In the Shadow of the Angel won an award at the Oaxaca Film Festival. Hotel Mañana, his TV pilot written
+                with Mark Saunders, finished in the top ten of Stage 32’s annual comedy contest, taking fifth place for
+                TV pilots and spec scripts. Scott Simmons’s profile in Atención
+                follows that reinvention, the scripts on his desk, and why this film belongs here.
               </p>
 
               <div className="mt-6 flex flex-wrap gap-3">
@@ -151,6 +168,66 @@ export default function Page() {
         </Container>
       </section>
 
+      <section id="producer" className="border-b border-white/10">
+        <Container>
+          <div className="grid gap-10 py-14 sm:py-16 lg:grid-cols-12 lg:items-start">
+            <div className="lg:order-last lg:col-span-4">
+              <div className="overflow-hidden rounded-2xl border border-white/10">
+                {PRODUCER_PHOTO_READY ? (
+                  <img
+                    src={PRODUCER_PHOTO}
+                    alt="Roberto González, producer"
+                    className="aspect-[4/3] w-full object-cover object-[center_20%]"
+                  />
+                ) : (
+                  <div
+                    role="img"
+                    aria-label="Roberto González, producer"
+                    className="flex aspect-[4/3] w-full items-center justify-center bg-gradient-to-br from-[#1a1714] to-[#0c0b0a]"
+                  >
+                    <span className="text-3xl font-semibold tracking-[0.22em] text-[#c4a27a]/40">RG</span>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <div className="lg:col-span-8">
+              <div className="text-[11px] font-semibold tracking-[0.22em] text-[#c4a27a]">THE PRODUCER</div>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight">Roberto González</h2>
+              <p className="mt-3 text-lg text-[#f4efe6]/80">He’s already taken audiences underground.</p>
+              <p className="mt-4 max-w-2xl text-[#f4efe6]/80">
+                Roberto González is an Emmy Award–winning producer, director and writer, and founding partner of
+                Ronin Studios in Mexico City. He created Drenaje Profundo for TV Azteca, a thriller about a
+                conspiracy buried beneath Mexico City, and produced the series La Teniente and Dos Lagos. He just wrapped a limited series for a major
+                streamer, filmed in Mexico and premiering in 2027.
+              </p>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                {PRODUCER_LINKS.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center rounded-full border border-white/20 px-4 py-2 text-sm font-medium text-[#f4efe6] no-underline hover:bg-white/10"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+
+              <ul className="mt-8 grid gap-2 sm:grid-cols-2">
+                {PRODUCER_CREDITS.map((credit) => (
+                  <li key={credit} className="rounded-xl border border-white/10 px-4 py-3 text-sm text-[#f4efe6]/80">
+                    {credit}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </Container>
+      </section>
+
       <section id="san-miguel" className="bg-[#f6f3ee] text-[#1c1916]">
         <Container>
           <div className="py-14 sm:py-16">
@@ -164,6 +241,12 @@ export default function Page() {
               stays specific. Rain-season stone, hard desert light, and haciendas sit in the same radius as the
               airports at León, Querétaro, and Mexico City.
             </p>
+            <Link
+              href="/san-miguel"
+              className="mt-5 inline-flex items-center rounded-full border border-[#1c1916]/20 px-4 py-2 text-sm font-semibold text-[#1c1916] no-underline hover:bg-white"
+            >
+              Filming in San Miguel de Allende
+            </Link>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {[

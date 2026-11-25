@@ -109,6 +109,17 @@ export default function ResourcesPage() {
               </div>
             </Card>
 
+            <Card title="Filming in San Miguel de Allende">
+              <div className="space-y-2">
+                <Link href="/san-miguel" className="underline decoration-neutral-300 hover:decoration-neutral-900">
+                  Why this feature is written for the city
+                </Link>
+                <div className="text-xs text-neutral-500">
+                  The colonial center, the arroyo, the light, and the roads into set.
+                </div>
+              </div>
+            </Card>
+
             <Card title="San Miguel — UNESCO">
               <div className="space-y-2">
                 <OutLink href="https://whc.unesco.org/en/list/1274">

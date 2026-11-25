@@ -43,9 +43,27 @@ export const LINKEDIN_URL = "https://www.linkedin.com/in/frank-gaydos-ba89b18/";
 
 export const DECK_FILE = "/deck/zapatista-pitch-deck.pdf";
 
+export const PRODUCER_PHOTO = "/images/roberto-gonzalez.jpg";
+
+export const PRODUCER_IMDB_URL = "https://www.imdb.com/name/nm3278262/";
+
+export const PRODUCER_RONIN_URL = "https://vimeo.com/738493290";
+
+// TODO: set before the link renders.
+export const PRODUCER_LINKEDIN_URL = "";
+
+export const PRODUCER_CREDITS = [
+  "Zapatista — Producer (in development)",
+  "Limited series for a major streamer — Producer (2027)",
+  "Adentro (2021) — Producer, Director",
+  "Dos Lagos (2017) — Executive Producer, Director",
+  "La Teniente (2012) — Executive Producer",
+  "Drenaje Profundo (2010–2011) — Creator, Producer",
+];
+
 export const PROJECT_CONTACT_NAME = "Frank Gaydos";
 
-export const PROJECT_EMAIL = "frankgaydos.sma@gmail.com";
+export const PROJECT_EMAIL = "frankjgaydos@yahoo.com";
 
 export const PROJECT_PHONE = "52 415 113 9723";
 
